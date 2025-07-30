@@ -33,14 +33,6 @@ pipeline {
             }
         }
         
-        stage('Collect Static Files') {
-            steps {
-                sh '''
-                    . $VENV/bin/activate
-                    python manage.py collectstatic --noinput --settings=config.settings
-                '''
-            }
-        }
         
         stage('Run Tests') {
             steps {
