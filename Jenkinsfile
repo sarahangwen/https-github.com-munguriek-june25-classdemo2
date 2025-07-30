@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/munguriek/june-2025-class-demo-1-django.git'
+                git 'https://github.com/munguriek/june25-classdemo2.git'
             }
         }
         stage('Set up Virtual Environment') {
@@ -34,11 +34,6 @@ pipeline {
                 python manage.py test
                 '''
             }
-        }
-    }
-    post {
-        always {
-            cleanWs()
         }
     }
 }
